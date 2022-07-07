@@ -19,10 +19,7 @@ public class Factorial {
 
     public void printFactorials() {
         System.out.println("1! is 1");
-//        factorial(4);
-        for (int i = 0; i <= 0; i++){
-            factorial(4);
-        }
+        factorial(4);
 
     }
 
