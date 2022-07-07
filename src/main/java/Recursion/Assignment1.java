@@ -22,7 +22,8 @@ public class Assignment1 {
         System.out.println("\n");
         System.out.printf("**********Section 2 **********\n");
         System.out.println("\n");
-        factorial.factorial(4);
+//        factorial.factorial(4);
+        factorial.printFactorials();
 
 
     }

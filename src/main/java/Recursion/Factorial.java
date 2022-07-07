@@ -7,20 +7,23 @@ public class Factorial {
     public Factorial() {
     }
 
-//    methods
-    public void factorial(int number){
-        int fact = 1;
-        int counter = 1;
-        System.out.println("1! is " + 1);
-
-//        for loop to iterate over the number
-        for (int i = 2; i <= number; i++){
-            counter += 1;
-            fact = fact * i;
-            System.out.println(counter + "!" + " is " + fact);
+    public int factorial(int number){
+        if (number == 1) {
+            return number;
         }
 
-    };
+        int recursion = number * factorial(number -1);
+        System.out.println(number + "! is " + recursion);
+        return recursion;
+    }
 
+    public void printFactorials() {
+        System.out.println("1! is 1");
+//        factorial(4);
+        for (int i = 0; i <= 0; i++){
+            factorial(4);
+        }
+
+    }
 
 }
