@@ -17,6 +17,12 @@ public class Assignment1 {
         System.out.printf("%d", fibonacci.fibonacci(10));
         System.out.println("\n");
 
+        Factorial factorial = new Factorial();
+
+        System.out.println("\n");
+        System.out.printf("**********Section 2 **********\n");
+        System.out.println("\n");
+        factorial.factorial(4);
 
 
     }
