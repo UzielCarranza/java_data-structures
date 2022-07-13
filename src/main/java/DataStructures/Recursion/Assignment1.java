@@ -1,4 +1,4 @@
-package Recursion;
+package DataStructures.Recursion;
 
 
 public class Assignment1 {
