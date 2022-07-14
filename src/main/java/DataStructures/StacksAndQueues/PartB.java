@@ -1,24 +1,20 @@
 package DataStructures.StacksAndQueues;
 
 import DataStructures.Array;
-import jdk.swing.interop.SwingInterOpUtils;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
-public class Stack {
+public class PartB {
 
     private final Queue<String> customers = new LinkedList<String>();
+    private final Stack<String> stack = new Stack<String>();
+    Scanner sc = new Scanner(System.in);
 
 
-    public Stack() {
+    public PartB() {
     }
 
-    public void Stacks() {
-    }
-
-    public void Init() {
+    public void Section1() {
 
         System.out.println("\n");
         System.out.println("--------------Part B---------------");
@@ -59,5 +55,35 @@ public class Stack {
         customers.remove();
         customers.remove();
         System.out.println("The number of customers in line now is: " + customers.size());
+
     }
+
+    public void Stacks() {
+        System.out.println("\n");
+        System.out.println("*********** Section: 2 ***********");
+        System.out.println("\n");
+        System.out.println("Please enter a sentence.");
+        String userInput = sc.nextLine();
+        stack.add(userInput);
+        String reverse = stack.peek();
+        for (int i = 0; i < reverse.length(); i++){
+            System.out.println(reverse.charAt(i));
+        }
+//        for (String words : stack) {
+//            reverse += words;
+//            System.out.println(reverse);
+//        }
+//        for (int i = 0; i <= stack; i++){
+//            System.out.println(i);
+//        }
+
+
+    }
+
+    public void Init() {
+        Section1();
+        Stacks();
+
+    }
+
 }
