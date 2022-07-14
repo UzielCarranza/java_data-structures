@@ -1,6 +1,7 @@
 package DataStructures.StacksAndQueues;
 
 import DataStructures.Array;
+import jdk.swing.interop.SwingInterOpUtils;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -50,6 +51,13 @@ public class Stack {
                 System.out.println(counter + "th " + customer);
             }
         }
-
+        System.out.println("\n");
+        System.out.println("The first customer in line is: " + customers.peek());
+        customers.add("Andy");
+        customers.add("Rhonda");
+        customers.remove();
+        customers.remove();
+        customers.remove();
+        System.out.println("The number of customers in line now is: " + customers.size());
     }
 }
