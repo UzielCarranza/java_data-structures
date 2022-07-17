@@ -1,13 +1,11 @@
 package DataStructures.StacksAndQueues;
 
-import DataStructures.Array;
-
 import java.util.*;
 
 public class PartB {
 
     private final Queue<String> customers = new LinkedList<String>();
-    private final Stack<String> stack = new Stack<String>();
+    private final Stack<String> stack = new Stack<>();
     Scanner sc = new Scanner(System.in);
 
 
@@ -59,26 +57,50 @@ public class PartB {
     }
 
     public void Stacks() {
+        String str = sc.nextLine();
         System.out.println("\n");
         System.out.println("*********** Section: 2 ***********");
         System.out.println("\n");
         System.out.println("Please enter a sentence.");
+
         String userInput = sc.nextLine();
-        stack.add(userInput);
-        String reverse = stack.peek();
-        for (int i = 0; i < reverse.length(); i++){
-            System.out.println(reverse.charAt(i));
+
+        // empty temporary String
+        String temp = "";
+
+        // Traversing the entire String
+        for (int i = 0; i < userInput.length(); i++) {
+            if (userInput.charAt(i) == ' ') {
+                // Push temporary
+                // variable into the stack
+                stack.add(temp);
+
+                // Assigning temporary
+                // variable as empty
+                temp = "";
+            } else {
+                temp = temp + userInput.charAt(i);
+            }
+
         }
-//        for (String words : stack) {
-//            reverse += words;
-//            System.out.println(reverse);
-//        }
-//        for (int i = 0; i <= stack; i++){
-//            System.out.println(i);
-//        }
 
-
+        // For the last word
+        // of the String
+        stack.add(temp);
+        String reverseWord = " ";
+        while (!stack.isEmpty()) {
+            // Get the words in
+            // reverse order
+            temp = stack.peek();
+            stack.pop();
+            reverseWord = temp;
+            for (int i = 0; i < reverseWord.length(); i++) {
+                System.out.println(temp.charAt(i));
+            }
+            System.out.println("\n");
+        }
     }
+
 
     public void Init() {
         Section1();
