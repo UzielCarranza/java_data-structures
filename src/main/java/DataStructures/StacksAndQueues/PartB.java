@@ -97,7 +97,7 @@ public class PartB {
             for (int i = 0; i < reverseWord.length(); i++) {
                 System.out.println(temp.charAt(i));
             }
-            System.out.println("\n");
+            System.out.println();
         }
     }
 
