@@ -50,6 +50,9 @@ public class Assignment2A {
 
         scanner.nextLine();
 
+        PartB partB = new PartB();
+        partB.Init();
+
 
     }
 
