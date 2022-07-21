@@ -156,7 +156,7 @@ class Assign3
     }
 
     //***Node is a nested class for the purposes of keeping the code to one .java file
-    public class Node
+    public static class Node
     {
         public Node left;
         public Node right;
@@ -220,10 +220,6 @@ class Assign3
         }
 
     }
-
-
-//    PART B
-
 
 
 
