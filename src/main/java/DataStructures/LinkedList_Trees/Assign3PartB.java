@@ -1,18 +1,14 @@
 package DataStructures.LinkedList_Trees;
 
-public class Runner {
+public class Assign3PartB {
     public static void main(String[] args) {
         PartB part2 = new PartB();
         part2.partB();
         part2.section2();
 
-//        Assign3 OuterObj = new Assign3();
-//        Assign3.BinaryTree myTree = OuterObj.new BinaryTree();
-//        myTree.Create();
-
-
-        Runner OuterObj = new Runner();
-        Runner.BinaryTree tree = OuterObj.new BinaryTree();
+        System.out.println("\n");
+        Assign3PartB OuterObj = new Assign3PartB();
+        Assign3PartB.BinaryTree tree = OuterObj.new BinaryTree();
         tree.CreatePartB();
     }
 
@@ -31,11 +27,11 @@ public class Runner {
     //***BinaryTree is a nested class for the purposes of keeping the code to one .java file
     public class BinaryTree {
         public void CreatePartB() {
-            NodePartB rootnode = new NodePartB(1);
-            insert(rootnode, 2);
-            insert(rootnode, 3);
-//            insert(rootnode, 12);
-//            insert(rootnode, 29);
+            NodePartB rootnode = new NodePartB(50);
+            insert(rootnode, 30);
+            insert(rootnode, 45);
+            insert(rootnode, 12);
+            insert(rootnode, 29);
             System.out.printf("The contents of the binary tree are: \n");
             traverse(rootnode);
         }
@@ -81,10 +77,9 @@ public class Runner {
         public void printInOrder(NodePartB node) {
             if (node != null) {
 
-
+                printInOrder(node.left);
                 System.out.printf(" Traversed " + node.value + "\n");
-                printPostOrder(node.right);
-                printPostOrder(node.left);
+                printInOrder(node.right);
 
             }
 
