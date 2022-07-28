@@ -15,9 +15,12 @@ public class MyProgramPartB {
 
 //        create array that holds student grades
         int[] studentGrades = {65, 95, 75, 55, 56, 90, 98, 88, 97, 78};
+        printArray(studentGrades);
+        System.out.println("\n");
         sortArrayDescBS(studentGrades);
         System.out.println("\n");
         sortArrayAscBS(studentGrades);
+        System.out.println("\n");
     }
 
     //     implements a bubble sort algorithm that will sort the grade array from highest to lowest
@@ -38,6 +41,7 @@ public class MyProgramPartB {
         }
     }
 
+    //     implements a bubble sort algorithm that will sort the grade array from lowest to highest
     public void sortArrayAscBS(int[] grades) {
         int temp;
         for (int i = 0; i < grades.length; i++) {
@@ -54,4 +58,13 @@ public class MyProgramPartB {
             System.out.println(num);
         }
     }
+
+//    print all elements within array of integers
+    public void printArray(int[] grades){
+        System.out.println("The unsorted list of grades is,");
+        for (int grade : grades){
+            System.out.println(grade);
+        }
+    }
+
 }
