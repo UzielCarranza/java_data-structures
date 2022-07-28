@@ -91,7 +91,7 @@ public class MyProgramPartB {
         // this pass, the largest element
         // is moved (or bubbled) to end.
         for (int i = 0; i < num - 1; i++)
-            if (grades[i] > grades[i + 1]) {
+            if (grades[i] < grades[i + 1]) {
                 // swap arr[i], arr[i+1]
                 int temp = grades[i];
                 grades[i] = grades[i + 1];
