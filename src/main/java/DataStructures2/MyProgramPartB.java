@@ -73,11 +73,31 @@ public class MyProgramPartB {
         //        create array that holds student grades
         int[] studentGrades = {65, 95, 75, 55, 56, 90, 98, 88, 97, 78};
         System.out.println("*********** Section: 2 – Quick Sort ***********" + "\n");
+
+//        unsorted list
+        System.out.println("The unsorted list of grades is: ");
+        for (int grade : studentGrades) {
+            System.out.println(grade);
+        }
+//
+        System.out.println("\n");
+
+//        descending order
+        System.out.println("The grades in descending order are,");
         sortArrayDescQS(studentGrades, studentGrades.length);
         for (int grade : studentGrades) {
             System.out.println(grade);
         }
+//
+        System.out.println("\n");
 
+//        ascending order
+        System.out.println("The grades in ascending order are,");
+        sortArrayAscQS(studentGrades, studentGrades.length);
+        for (int grade : studentGrades) {
+            System.out.println(grade);
+        }
+//
     }
 
     //    implements a quick sort algorithm, using recursion, that will sort the grade array from highest to lowest
@@ -102,4 +122,26 @@ public class MyProgramPartB {
         sortArrayDescQS(grades, num - 1);
     }
 
+
+//    implements a quick sort algorithm, using recursion, that will sort the grade array from lowest to highest
+    public void sortArrayAscQS(int[] grades, int num){
+//        based case
+        if (num == 1) {
+            return;
+        }
+
+        // One pass of bubble sort. After
+        // this pass, the smallest element
+        // is moved (or bubbled) to end.
+        for (int i = 0; i < num - 1; i++)
+            if (grades[i] > grades[i + 1]) {
+                // swap arr[i], arr[i+1]
+                int temp = grades[i];
+                grades[i] = grades[i + 1];
+                grades[i + 1] = temp;
+            }
+        // Largest element is fixed,
+        // recur for remaining array
+        sortArrayAscQS(grades, num - 1);
+    }
 }
