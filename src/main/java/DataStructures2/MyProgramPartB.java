@@ -152,9 +152,13 @@ public class MyProgramPartB {
 
         int[] studentGrades = {65, 95, 75, 55, 56, 90, 98, 88, 97, 78};
         sortArrayAscQS(studentGrades, studentGrades.length);
+        System.out.println("The contents of the grade array are: ");
         for (int grade : studentGrades){
             System.out.println(grade);
         }
+        System.out.println(seqSearch(studentGrades, 75));
+        System.out.println(seqSearch(studentGrades, 60));
+
 
     }
 
