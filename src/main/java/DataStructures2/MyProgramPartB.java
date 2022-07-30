@@ -123,8 +123,8 @@ public class MyProgramPartB {
     }
 
 
-//    implements a quick sort algorithm, using recursion, that will sort the grade array from lowest to highest
-    public void sortArrayAscQS(int[] grades, int num){
+    //    implements a quick sort algorithm, using recursion, that will sort the grade array from lowest to highest
+    public void sortArrayAscQS(int[] grades, int num) {
 //        based case
         if (num == 1) {
             return;
@@ -143,5 +143,47 @@ public class MyProgramPartB {
         // Largest element is fixed,
         // recur for remaining array
         sortArrayAscQS(grades, num - 1);
+    }
+
+    //    Sequential Search
+    public void section3() {
+        System.out.println("\n");
+        System.out.println("*********** Section: 3 – Sequential Search ***********" + "\n");
+
+        int[] studentGrades = {65, 95, 75, 55, 56, 90, 98, 88, 97, 78};
+        sortArrayAscQS(studentGrades, studentGrades.length);
+        for (int grade : studentGrades){
+            System.out.println(grade);
+        }
+
+    }
+
+    public String seqSearch(int[] array, int valueToBeFound) {
+        System.out.println();
+
+        String message = "Number " + valueToBeFound + " was not found";
+        // if array is Null
+        if (array == null) {
+            return message;
+        }
+
+        // find length of array
+        int len = array.length;
+        int i = 0;
+
+        // traverse in the array
+        while (i < len) {
+
+            // if the i-th element is t
+            // then return the index
+            if (array[i] == valueToBeFound) {
+                message = "number " + valueToBeFound +  " was found at index: " + i;
+                return message;
+            } else {
+                i = i + 1;
+            }
+        }
+        return message;
+
     }
 }
