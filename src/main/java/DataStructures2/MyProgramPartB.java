@@ -153,7 +153,7 @@ public class MyProgramPartB {
         int[] studentGrades = {65, 95, 75, 55, 56, 90, 98, 88, 97, 78};
         sortArrayAscQS(studentGrades, studentGrades.length);
         System.out.println("The contents of the grade array are: ");
-        for (int grade : studentGrades){
+        for (int grade : studentGrades) {
             System.out.println(grade);
         }
         System.out.println(seqSearch(studentGrades, 75));
@@ -181,7 +181,7 @@ public class MyProgramPartB {
             // if the i-th element is t
             // then return the index
             if (array[i] == valueToBeFound) {
-                message = "number " + valueToBeFound +  " was found at index: " + i;
+                message = "number " + valueToBeFound + " was found at index: " + i;
                 return message;
             } else {
                 i = i + 1;
@@ -189,5 +189,64 @@ public class MyProgramPartB {
         }
         return message;
 
+    }
+
+    public void section4() {
+        System.out.println("*********** Section: 4 – Binary Search ***********" + "\n");
+//        declare array of nums
+        int[] studentGrades = {65, 95, 75, 55, 56, 90, 98, 88, 97, 78, 10};
+//        sort array in ascending order
+        sortArrayAscQS(studentGrades, studentGrades.length);
+//        declare num to be found
+        int numToBeFound = 55;
+//        get the response from the method
+        int result = binarySearch(studentGrades, numToBeFound);
+//        if method = -1
+        if (result == -1) {
+            System.out.println("number " + numToBeFound + " was not found");
+        } else {
+            System.out.println("number " + numToBeFound + " was found at index "
+                    + result);
+        }
+
+    }
+
+    //    accepts an integer array and a value to find in the array.
+//    method returns a string message stating the index in the array where the value sought was located
+//    or returns a message stating the value was not located in the array
+    public int binarySearch(int[] arrayNums, int numToBeFound) {
+//        declare variable
+
+//        lowest value
+        int low = 0;
+
+//        highest value (of ascending sorted array)
+        int highest = arrayNums.length - 1;
+
+//        iteration
+
+//        if int low is less than or equal to highest
+        while (low <= highest) {
+
+//            declare middle value
+            int middle = low + (highest - low) / 2;
+
+            // Check if numToBeFound is present at mid
+            if (arrayNums[middle] == numToBeFound)
+//                return that index
+                return middle;
+
+            // If numToBeFound is greater, ignore left half
+            if (arrayNums[middle] < numToBeFound)
+                low = middle + 1;
+
+                // If numToBeFound is smaller, ignore right half
+            else
+                highest = middle - 1;
+        }
+
+        // if we reach here, then element was
+        // not present
+        return -1;
     }
 }
