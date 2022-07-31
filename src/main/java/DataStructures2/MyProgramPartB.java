@@ -217,7 +217,7 @@ public class MyProgramPartB {
         }
 
 
-        int num2 = 55;
+        int num2 = 50;
 
         int result2 = binarySearch(studentGrades, num2);
         if (result2 == -1) {
