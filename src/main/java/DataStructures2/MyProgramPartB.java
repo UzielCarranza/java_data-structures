@@ -197,8 +197,15 @@ public class MyProgramPartB {
         int[] studentGrades = {65, 95, 75, 55, 56, 90, 98, 88, 97, 78, 10};
 //        sort array in ascending order
         sortArrayAscQS(studentGrades, studentGrades.length);
+
+        System.out.println("The contents of the grade array are : " + "\n");
+        for (int grade : studentGrades) {
+            System.out.println(grade);
+        }
+
+        System.out.println();
 //        declare num to be found
-        int numToBeFound = 55;
+        int numToBeFound = 56;
 //        get the response from the method
         int result = binarySearch(studentGrades, numToBeFound);
 //        if method = -1
@@ -207,6 +214,17 @@ public class MyProgramPartB {
         } else {
             System.out.println("number " + numToBeFound + " was found at index "
                     + result);
+        }
+
+
+        int num2 = 55;
+
+        int result2 = binarySearch(studentGrades, num2);
+        if (result2 == -1) {
+            System.out.println("number " + num2 + " was not found");
+        } else {
+            System.out.println("number " + num2 + " was found at index "
+                    + result2);
         }
 
     }
