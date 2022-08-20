@@ -13,7 +13,7 @@ public class XmlParser {
 
 //    file location
 
-    File xmlFile = new File("/Users/uzielcarranzacharro/IdeaProjects/java_projects/src/main/java/studentGrdes.xml");
+    File xmlFile;
     //        xml parsers
     DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
     DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
@@ -21,6 +21,14 @@ public class XmlParser {
 
     //    constructor
     public XmlParser() throws ParserConfigurationException {
+    }
+
+    public File pathFile() {
+        return xmlFile;
+    }
+
+    public void setPathFile(String location) {
+        this.xmlFile = new File(location);
     }
 
     public Document getDocu() {
