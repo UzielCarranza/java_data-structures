@@ -1,9 +1,4 @@
-import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
 
 public class StudentGrades {
 
@@ -19,8 +14,12 @@ public class StudentGrades {
 
 //            get all elements within the Root element
             NodeList listOfAllElements = xmlParser.getDocu().getElementsByTagName("grade");
-//            print the number of elements
-            System.out.println(listOfAllElements.getLength());
+//            call an instance of th eobject
+            GetAverage average = new GetAverage();
+//            get the average of the xml file grades
+            System.out.println(average.getAverage(listOfAllElements));
+
+
         } catch (Exception e) {
             System.out.println(e);
         }
