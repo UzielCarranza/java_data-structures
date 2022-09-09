@@ -43,6 +43,10 @@ public class String_Algorithms {
         System.out.println(isUpperCase("Hello"));
         System.out.println(isLowerCase("hello"));
         System.out.println(isNumeric(String.valueOf(0)));
+        System.out.println("COMPLEX PASSWORD VALIDATION");
+        System.out.println(isPasswordComplex("Hell0"));
+        System.out.println(isPasswordComplex("hello"));
+        System.out.println(isPasswordComplex("Hello"));
 
     }
 }
