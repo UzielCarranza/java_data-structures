@@ -23,6 +23,22 @@ public class String_Algorithms {
 
     }
 
+
+//    validating complex algorithms
+
+    public static boolean isPasswordComplex(String input) {
+
+//        iterates over every character and checks for any character that meets the requirement
+        return input.chars().anyMatch(Character::isUpperCase) &&
+                input.chars().anyMatch(Character::isLowerCase) &&
+                input.chars().anyMatch(Character::isDigit);
+
+//        or in a function condition
+//        input.chars().anyMatch(c -> Character.isUpperCase(c) ||
+//                Character.isLowerCase(c) ||
+//                Character.isDigit(c));
+    }
+
     public static void main(String[] args) {
         System.out.println(isUpperCase("Hello"));
         System.out.println(isLowerCase("hello"));
