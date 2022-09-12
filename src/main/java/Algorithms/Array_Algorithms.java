@@ -98,6 +98,21 @@ public class Array_Algorithms {
     }
 
 
+//    reverse an array in java
+//first approach, copy the contents of the old array but in reverse order
+    public static int[] reversedArray(int[] arr){
+
+//        this new array contains the same length as the old one, since nothing it's been added or removed, just rearranged
+        int [] reversed = new int[arr.length];
+        for (int i = 0; i < arr.length; i++){
+            reversed[i] = arr[arr.length -1 -i];
+        }
+
+//        this will have the contents of the original array but in reverse order
+        return reversed;
+    }
+
+
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5,};
         System.out.println(linearSearch(arr, 1));
@@ -119,6 +134,10 @@ public class Array_Algorithms {
         System.out.println();
         System.out.println("Optimized algorithm");
         Arrays.stream(findEvenNums2(arr, arr2)).forEach(System.out::println);
+
+        System.out.println("REVERSING AN ARRAY");
+        System.out.println(Arrays.toString(reversedArray(arr2)));
+        Arrays.stream(reversedArray(arr2)).forEach(System.out::println);
 
     }
 }
