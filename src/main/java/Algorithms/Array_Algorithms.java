@@ -2,6 +2,7 @@ package Algorithms;
 
 import DataStructures.Array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.OptionalInt;
 
@@ -55,6 +56,34 @@ public class Array_Algorithms {
         return false;
 
     }
+
+
+    //    find even numbers and add them to a new array
+    public static int[] findEvenNums(int[] arr, int[] arr2) {
+//        doing this keeps us from worrying about out of bounds exceptions
+        ArrayList<Integer> result = new ArrayList<>();
+
+        for (int num : arr) {
+//            if a number is even
+            if (num % 2 == 0) {
+//                add it to the array list
+                result.add(num);
+            }
+        }
+
+        for (int num : arr2) {
+//            if a number is even
+            if (num % 2 == 0) {
+//                add it to the array list
+                result.add(num);
+            }
+        }
+
+        return result.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+
+
 
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5,};
