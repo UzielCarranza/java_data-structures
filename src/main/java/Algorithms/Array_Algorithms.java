@@ -5,6 +5,8 @@ import DataStructures.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.OptionalInt;
+import java.util.function.IntPredicate;
+import java.util.stream.Stream;
 
 public class Array_Algorithms {
 
@@ -83,6 +85,17 @@ public class Array_Algorithms {
     }
 
 
+    public static int[] findEvenNums2(int[] arr, int[] arr2) {
+
+//        takes a number and check whether a it's even
+        IntPredicate isEvenPredicate = num -> num % 2 == 0;
+
+//        create stream with both arrays
+//        stream through each individual array
+//        filter based on predicate
+//        at the end, convert it to an array
+        return Stream.of(arr, arr2).flatMapToInt(Arrays::stream).filter(isEvenPredicate).toArray();
+    }
 
 
     public static void main(String[] args) {
@@ -98,6 +111,14 @@ public class Array_Algorithms {
         System.out.println("BINARY SEARCH");
         System.out.println(binarySearch(arr, 1));
         System.out.println(binarySearch(arr, 9));
+
+
+        int[] arr2 = {0, -2, -3, -8, 40, 20, 7};
+        System.out.println("FIND EVEN NUMBERS");
+        Arrays.stream(findEvenNums(arr, arr2)).forEach(System.out::println);
+        System.out.println();
+        System.out.println("Optimized algorithm");
+        Arrays.stream(findEvenNums2(arr, arr2)).forEach(System.out::println);
 
     }
 }
