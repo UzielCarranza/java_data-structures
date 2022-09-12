@@ -113,6 +113,17 @@ public class Array_Algorithms {
     }
 
 
+//    reversing array by modifying original array
+
+    public static void reversedInPlaced(int[] arr){
+        for (int i = 0; i < arr.length / 2; i++){
+//            swap items at index i and index (arr.length -i -1)'
+            int temp = arr[i];
+            arr[i] = arr[arr.length - i -1];
+            arr[arr.length - i -1] = temp;
+        }
+    }
+
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5,};
         System.out.println(linearSearch(arr, 1));
@@ -138,6 +149,8 @@ public class Array_Algorithms {
         System.out.println("REVERSING AN ARRAY");
         System.out.println(Arrays.toString(reversedArray(arr2)));
         Arrays.stream(reversedArray(arr2)).forEach(System.out::println);
-
+        System.out.println("new");
+        reversedInPlaced(arr2);
+        Arrays.stream(arr2).forEach(System.out::println);
     }
 }
