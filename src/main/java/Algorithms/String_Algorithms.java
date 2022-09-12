@@ -39,14 +39,45 @@ public class String_Algorithms {
 //                Character.isDigit(c));
     }
 
+
+    public static String reverse(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+
+//        use this so the algorithm doesn't create unnecessary data
+
+//        when the string builder object is modified, it doesn't create a new string builder
+//        instead it dynamically expands memory to accommodate the modified string
+//        recommended to run mutable operations
+        StringBuilder reversed = new StringBuilder();
+
+//        start iterating from the last index
+        for (int i = input.length() - 1; i >= 0; i--){
+//            appends each character to the string builder
+            reversed.append(input.charAt(i));
+        }
+
+//        convert to string builder to string
+        return reversed.toString();
+    }
+
+
+//    REVERSE STRING
+
+
     public static void main(String[] args) {
         System.out.println(isUpperCase("Hello"));
         System.out.println(isLowerCase("hello"));
         System.out.println(isNumeric(String.valueOf(0)));
+        System.out.println();
         System.out.println("COMPLEX PASSWORD VALIDATION");
         System.out.println(isPasswordComplex("Hell0"));
         System.out.println(isPasswordComplex("hello"));
         System.out.println(isPasswordComplex("Hello"));
+        System.out.println();
+        System.out.println("REVERSING STRINGS");
+        System.out.println(reverse("This is a sentence"));
 
     }
 }
