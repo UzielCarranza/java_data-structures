@@ -40,6 +40,7 @@ public class String_Algorithms {
     }
 
 
+    //    REVERSE STRING
     public static String reverse(String input) {
         if (input == null || input.isEmpty()) {
             return input;
@@ -53,7 +54,7 @@ public class String_Algorithms {
         StringBuilder reversed = new StringBuilder();
 
 //        start iterating from the last index
-        for (int i = input.length() - 1; i >= 0; i--){
+        for (int i = input.length() - 1; i >= 0; i--) {
 //            appends each character to the string builder
             reversed.append(input.charAt(i));
         }
@@ -63,7 +64,11 @@ public class String_Algorithms {
     }
 
 
-//    REVERSE STRING
+    public static String reverse_build_inOptions(String input) {
+        StringBuilder sb = new StringBuilder(input);
+        return sb.reverse().toString();
+
+    }
 
 
     public static void main(String[] args) {
@@ -78,6 +83,7 @@ public class String_Algorithms {
         System.out.println();
         System.out.println("REVERSING STRINGS");
         System.out.println(reverse("This is a sentence"));
+        System.out.println(reverse_build_inOptions("This is a sentence"));
 
     }
 }
