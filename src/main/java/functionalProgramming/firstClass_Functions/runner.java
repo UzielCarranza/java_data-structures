@@ -23,6 +23,10 @@ public class runner {
 
         //        constructor that tells if our program is in development or in production mode
         public DataLoader(Boolean isDevelopment) {
+            this.loadPerson = isDevelopment
+                    ? this::loadPersonFake
+//                    double colon represents how we refer to an objector classes method as an object of type function
+                    : this::loadPersonReal;
 
         }
 
