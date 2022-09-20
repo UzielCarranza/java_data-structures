@@ -29,6 +29,6 @@ public class FuctionsAsArguments {
 //        calls the combine 2 and 3 function that calls the subtract function
         System.out.println(MyMath.combine2And3(MyMath::subtract));
 
-
+        System.out.println(MyMath.combine2And3((x, y) -> 2 * x + 2 * y));
     }
 }
