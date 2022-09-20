@@ -3,7 +3,7 @@ package functionalProgramming.firstClass_Functions;
 public class runner {
 
     //    a person class
-    protected class Person {
+    protected static class Person {
         private String name;
         private Integer age;
 
@@ -14,7 +14,7 @@ public class runner {
     }
 
     //    loads data from a server
-    public class DataLoader {
+    protected static class DataLoader {
 
 //        create a public final member variable that will choose which of this private methods to expose to the outside world
 //since both function take no arguments, we will use the ano args interface previously created
@@ -50,5 +50,11 @@ public class runner {
 
     public static void main(String[] args) {
 
+//        boolean to tell the program is app is in development
+        final Boolean IS_DEVELOPMENT = false;
+//        call an instance on Data loader
+        DataLoader dataLoader = new DataLoader(IS_DEVELOPMENT);
+//        print to the console the status of loader
+        System.out.println(dataLoader.loadPerson.apply());
     }
 }
