@@ -3,6 +3,7 @@ package streams;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -28,6 +29,12 @@ public class StreamFilter {
         System.out.println("EVENS ");
         System.out.println(evens);
 
+//        created a function that checks if the length is greater than a specific length within the parameter
+        Function<Integer, Predicate<String>> createLengthTest = (minLength) -> {
+            return (str) -> str.length() > minLength;
+        };
+
+        Predicate<String> isLongerThan3 = createLengthTest.apply(3);
 
     }
 }
