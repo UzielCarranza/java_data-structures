@@ -3,6 +3,7 @@ package streams;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class StreamFilter {
 
@@ -12,5 +13,10 @@ public class StreamFilter {
 
 //        convert array to list
         List<Integer> listOfIntegers = new ArrayList<>(Arrays.asList(intArray));
+
+//        function that checks for even numbers
+        Predicate<Integer> predicateIsEven = (x) -> x % 2 == 0;
+
+
     }
 }
