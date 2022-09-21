@@ -20,5 +20,8 @@ public class HigherOrderFunctions {
                     }
                     return func.apply(x, y);
                 };
+
+        BiFunction<Float, Float, Float> divideSafe = secondArgIsntZeroCheck.apply(divide);
+        System.out.println(divideSafe.apply(10f,2f));
     }
 }
