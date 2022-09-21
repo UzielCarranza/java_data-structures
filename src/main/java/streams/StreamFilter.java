@@ -34,7 +34,20 @@ public class StreamFilter {
             return (str) -> str.length() > minLength;
         };
 
+//        predicate to check for words longer than 3
         Predicate<String> isLongerThan3 = createLengthTest.apply(3);
+
+//        create array of words
+        String[] wordsArr = {"Hello", "how are you", "doing", "today"};
+
+//        convert array to list
+        List<String> words = new ArrayList<>(Arrays.asList(wordsArr));
+
+//        filter over the array and look for words greater than 3 in length
+        List<String> longWords = words.stream().filter(isLongerThan3).collect(Collectors.toList());
+
+
+        System.out.println(longWords);
 
     }
 }
