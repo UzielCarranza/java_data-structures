@@ -59,6 +59,11 @@ public class ExtraPractice {
                     .filter((employee) -> employee.jobTitle == "developer")
 //                    collect the total count
                     .collect(Collectors.counting());
+
+//            get the average of developers salary
+            Float averageDeveloperSalary = totalDeveloperSalary / numberOfDevelopers;
+            System.out.println(averageDeveloperSalary);
+
         }
     }
 }
