@@ -4,6 +4,7 @@ package streams;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ExtraPractice {
 
@@ -49,6 +50,15 @@ public class ExtraPractice {
                     .map((developer) -> developer.salary)
 //                    get the sum of all the developer's salary
                     .reduce(0f, (acc, x) -> acc + x);
+
+            //        find the total number of developers
+            Long numberOfDevelopers = employeeList
+//                    stream over the list of employees
+                    .stream()
+//                    filter out employees by job title
+                    .filter((employee) -> employee.jobTitle == "developer")
+//                    collect the total count
+                    .collect(Collectors.counting());
         }
     }
 }
