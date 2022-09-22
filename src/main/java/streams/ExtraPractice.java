@@ -1,6 +1,10 @@
 package streams;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ExtraPractice {
 
     //    create an Employee class
@@ -31,6 +35,20 @@ public class ExtraPractice {
                     new Employee("Nancy", 43, "developer", 70000f),
 
             };
+
+//            convert array of employees to list
+            List<Employee> employeeList = new ArrayList<>(Arrays.asList(employeesArr));
+
+//            get the total sum of all developer's salary
+            Float totalDeveloperSalary = employeeList
+//                    stream over the list of employees
+                    .stream()
+//                    filter by job title
+                    .filter((employee) -> employee.jobTitle == "developer")
+//                    create new data containing the filtered result
+                    .map((developer) -> developer.salary)
+//                    get the sum of all the developer's salary
+                    .reduce(0f, (acc, x) -> acc + x);
         }
     }
 }
