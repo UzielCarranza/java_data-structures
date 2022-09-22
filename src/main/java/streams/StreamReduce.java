@@ -25,6 +25,13 @@ public class StreamReduce {
 
         };
 
+        //        Define an integer variable to grab the result of using reducer
+        Integer sum = listOfIntegers
+//                Stream over the list of integers
+                .stream()
+//                reduce takes two arguments, initial value and function
+                .reduce(0, getSum);
+        System.out.println(sum);
 
     }
 }
