@@ -17,6 +17,19 @@ public class IsEven {
 //        convert array of nums to a list of nums
         List<Integer> numsToList = new ArrayList<Integer>(Arrays.asList(numbers));
 
+// predicate that returns true when the numbers are even
+        Predicate<Integer> isEven = (num) -> num % 2 == 0;
+
+//        create new list to hold filtered items
+        List<Integer> evenNums = numsToList
+//                stream over the list of nums
+                .stream()
+//                takes a function argument... we passed the isEven predicate to filter out nums that are even
+                .filter(isEven)
+//                convert filtered streams into a list
+                .collect(Collectors.toList());
+        System.out.println(evenNums);
+
 
     }
 }
