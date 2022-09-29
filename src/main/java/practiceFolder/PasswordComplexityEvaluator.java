@@ -15,6 +15,7 @@ public class PasswordComplexityEvaluator {
             if (password.length() >= 6) {
                 if (password.chars().anyMatch(Character::isUpperCase)) {
                     if (password.chars().anyMatch(Character::isLowerCase))
+                        if (password.chars().anyMatch(Character::isDigit))
                     return true;
                 }
             }
@@ -24,7 +25,7 @@ public class PasswordComplexityEvaluator {
         System.out.println("Contains at least one Uppercase character");
         System.out.println(isPasswordComplex.apply("hello") + " First test");
         System.out.println(isPasswordComplex.apply("Hello") + " Second test");
-        System.out.println(isPasswordComplex.apply("hElLo World") + " Third test");
+        System.out.println(isPasswordComplex.apply("hElLo World 2.0") + " Third test");
     }
 
 }
