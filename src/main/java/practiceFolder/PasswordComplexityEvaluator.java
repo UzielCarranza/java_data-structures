@@ -14,6 +14,7 @@ public class PasswordComplexityEvaluator {
         Function<String, Boolean> isPasswordComplex = (password) -> {
             if (password.length() >= 6) {
                 if (password.chars().anyMatch(Character::isUpperCase)) {
+                    if (password.chars().anyMatch(Character::isLowerCase))
                     return true;
                 }
             }
