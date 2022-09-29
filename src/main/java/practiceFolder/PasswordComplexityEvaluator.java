@@ -12,15 +12,18 @@ public class PasswordComplexityEvaluator {
     public static void main(String[] args) {
 
         Function<String, Boolean> isPasswordComplex = (password) -> {
-            if (password.chars().anyMatch(Character::isUpperCase)) {
-                return true;
+            if (password.length() >= 6) {
+                if (password.chars().anyMatch(Character::isUpperCase)) {
+                    return true;
+                }
             }
             return false;
         };
 
+        System.out.println("Contains at least one Uppercase character");
         System.out.println(isPasswordComplex.apply("hello") + " First test");
         System.out.println(isPasswordComplex.apply("Hello") + " Second test");
-        System.out.println(isPasswordComplex.apply("hElLo") + " Third test");
+        System.out.println(isPasswordComplex.apply("hElLo World") + " Third test");
     }
 
 }
