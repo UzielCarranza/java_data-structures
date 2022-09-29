@@ -10,9 +10,17 @@ public class PasswordComplexityEvaluator {
 //   at least  one lower case
 //    at least one number
     public static void main(String[] args) {
+
         Function<String, Boolean> isPasswordComplex = (password) -> {
+            if (password.chars().anyMatch(Character::isUpperCase)) {
+                return true;
+            }
             return false;
         };
+
+        System.out.println(isPasswordComplex.apply("hello") + " First test");
+        System.out.println(isPasswordComplex.apply("Hello") + " Second test");
+        System.out.println(isPasswordComplex.apply("hElLo") + " Third test");
     }
 
 }
