@@ -14,4 +14,22 @@ public class sqlInjection {
         ResultSet resultSet = statement.executeQuery(sql);
 
     }
+    public void demoMethodSecureCoding(String input) throws SQLException {
+
+//        user a question mark character to act as the user's name variable
+        String sql = "select * from users where user_name = ?";
+        Connection connection = DriverManager.getConnection("localhost");
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+//        sets string value on the statement using the input
+//        parametired index
+//        everything pass into the input string
+//        will be treated completely as a string
+//        EX: passing a value of or 1=1, is now going to look for a username
+//        that equals whatever the input was supposed to be
+//        treating it as a string and escaping all those values
+        preparedStatement.setString(1,input);
+        ResultSet resultSet = preparedStatement.executeQuery(sql);
+
+    }
 }
