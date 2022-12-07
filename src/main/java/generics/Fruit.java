@@ -1,6 +1,6 @@
 package generics;
 
-public class Fruit {
+public class Fruit implements Boxable {
 
     private String name;
     private String countryOfOrigin;
