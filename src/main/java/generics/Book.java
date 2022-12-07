@@ -1,6 +1,6 @@
 package generics;
 
-public class Book {
+public class Book implements Boxable {
 
     private String name;
     private String author;

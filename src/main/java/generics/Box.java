@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //create a class box and create a type parameter (T) for it
-public class Box<T>{
+public class Box<T extends Boxable>{
 
     private List<T> items;
 
@@ -25,6 +25,18 @@ public class Box<T>{
     }
     public T getLatestItem(){
         return this.items.get(items.size() -1);
+    }
+
+    public double getTotalWeight(){
+//        acces items list
+        return this.items
+//                get stream of items
+                .stream()
+//                map every stream to a double
+//                method reference concept
+                .mapToDouble(Boxable::getWeight)
+//                sum all the weights and return it as a double value
+                .sum();
     }
 
     @Override
