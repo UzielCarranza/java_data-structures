@@ -18,5 +18,12 @@ public class TestBoxGenerics {
         fruitBox.addItem(new Fruit("Mango","India","Yellow",0.5));
         fruitBox.addItem(new Fruit("banana","Brazil","Green",0.3));
         System.out.println(fruitBox.getLatestItem());
+
+        System.out.println();
+        System.out.println("Book Count");
+        System.out.println(BoxUtils.getCountOfItems(bookBox));
+        System.out.println();
+        System.out.println("Fruit Count");
+        System.out.println(BoxUtils.getCountOfItems(fruitBox));
     }
 }
