@@ -17,6 +17,16 @@ public class Box<T>{
         return items;
     }
 
+//    GENERIC METHODS
+//    generic method that adds item to the list
+
+    public void addItem(T t){
+        items.add(t);
+    }
+    public T getLatestItem(){
+        return this.items.get(items.size() -1);
+    }
+
     @Override
     public String toString() {
         return "Box{" +
