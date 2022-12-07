@@ -25,5 +25,7 @@ public class TestBoxGenerics {
         System.out.println();
         System.out.println("Fruit Count");
         System.out.println(BoxUtils.getCountOfItems(fruitBox));
+        System.out.println("Total weight of books " + bookBox.getTotalWeight());
+        System.out.println("Total weight of fruits " + fruitBox.getTotalWeight());
     }
 }
